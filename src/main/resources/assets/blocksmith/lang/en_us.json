@@ -1,0 +1,10 @@
+{
+  "item.blocksmith.heartwood_chunk": "Heartwood Chunk",
+  "item.blocksmith.raw_verdanite": "Raw Verdanite",
+  "item.blocksmith.verdanite_ingot": "Verdanite Ingot",
+  "block.blocksmith.heartwood_block": "Heartwood Block",
+  "block.blocksmith.verdanite_block": "Verdanite Block",
+  "block.blocksmith.verdanite_ore": "Verdanite Ore",
+  "block.blocksmith.deepslate_verdanite_ore": "Deepslate Verdanite Ore",
+  "itemgroup.blocksmith.blocksmith_items": "Blocksmith"
+}

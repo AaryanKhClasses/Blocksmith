@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "blocksmith:block/verdanite_block"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "blocksmith",
+	"version": "${version}",
+	"name": "Blocksmith",
+	"description": "Learning how to make fabric mods in the big 2025-26!",
+	"authors": [
+		"AaryanKh"
+	],
+	"contact": {
+		"homepage": "https://aaryankh.vercel.app/",
+		"sources": "https://github.com/AaryanKh/Blocksmith"
+	},
+	"license": "GPL-v3.0",
+	"icon": "assets/blocksmith/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.aaryankh.blocksmith.Blocksmith"
+		],
+		"fabric-datagen": [
+			"com.aaryankh.blocksmith.BlocksmithDataGenerator"
+		],
+        "client": [
+          "com.aaryankh.blocksmith.BlocksmithClient"
+        ]
+	},
+	"depends": {
+		"fabricloader": ">=0.18.1",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
