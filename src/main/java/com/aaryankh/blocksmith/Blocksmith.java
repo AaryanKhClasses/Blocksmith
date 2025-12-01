@@ -4,6 +4,7 @@ import com.aaryankh.blocksmith.block.ModBlocks;
 import com.aaryankh.blocksmith.item.ModItemGroups;
 import com.aaryankh.blocksmith.item.ModItems;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,5 +18,7 @@ public class Blocksmith implements ModInitializer {
         ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+
+        FuelRegistry.INSTANCE.add(ModItems.MYSTITE_COAL, 20000);
     }
 }

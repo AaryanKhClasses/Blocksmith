@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "blocksmith:verdanite_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "blocksmith:verdanite_apple"
+  }
+}

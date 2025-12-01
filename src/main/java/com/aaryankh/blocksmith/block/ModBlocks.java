@@ -1,6 +1,7 @@
 package com.aaryankh.blocksmith.block;
 
 import com.aaryankh.blocksmith.Blocksmith;
+import com.aaryankh.blocksmith.block.custom.MystiteBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ExperienceDroppingBlock;
@@ -52,6 +53,13 @@ public class ModBlocks {
                     .strength(4f)
                     .requiresTool()
                     .sounds(BlockSoundGroup.STONE)
+            )
+    );
+
+    public static final Block MYSTITE_BLOCK = registerBlock("mystite_block",
+            new MystiteBlock(AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .sounds(BlockSoundGroup.GRASS)
             )
     );
 

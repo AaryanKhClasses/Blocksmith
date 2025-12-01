@@ -21,10 +21,14 @@ public class ModItemGroups {
                         entries.add(ModItems.HEARTWOOD_CHUNK);
                         entries.add(ModItems.RAW_VERDANITE);
                         entries.add(ModItems.VERDANITE_INGOT);
+                        entries.add(ModItems.VERDANITE_CHISEL);
+                        entries.add(ModItems.VERDANITE_APPLE);
+                        entries.add(ModItems.MYSTITE_COAL);
                         entries.add(ModBlocks.HEARTWOOD_BLOCK);
                         entries.add(ModBlocks.VERDANITE_ORE);
                         entries.add(ModBlocks.DEEPSLATE_VERDANITE_ORE);
                         entries.add(ModBlocks.VERDANITE_BLOCK);
+                        entries.add(ModBlocks.MYSTITE_BLOCK);
                     }).build()
     );
 
