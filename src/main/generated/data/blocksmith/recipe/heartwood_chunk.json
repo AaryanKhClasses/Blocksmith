@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "blocksmith:heartwood_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "blocksmith:heartwood_chunk"
+  }
+}

@@ -5,10 +5,16 @@
   "item.blocksmith.verdanite_chisel": "Verdanite Chisel",
   "item.blocksmith.verdanite_apple": "Verdanite Apple",
   "item.blocksmith.mystite_coal": "Mystite Coal",
+
   "block.blocksmith.heartwood_block": "Heartwood Block",
   "block.blocksmith.verdanite_block": "Verdanite Block",
   "block.blocksmith.mystite_block": "Mystite Block",
   "block.blocksmith.verdanite_ore": "Verdanite Ore",
   "block.blocksmith.deepslate_verdanite_ore": "Deepslate Verdanite Ore",
-  "itemgroup.blocksmith.blocksmith_items": "Blocksmith"
+
+  "itemgroup.blocksmith.blocksmith_items": "Blocksmith",
+  "tooltip.blocksmith.mystite_block": "Converts §eAncient Debris§r into 2 §2Verdanite Ingots§r on Dropping.",
+  "tooltip.blocksmith.chisel": "Converts blocks on right click. Press §eSHIFT§r for more info.",
+  "tooltip.blocksmith.chisel.shift_down": "Converts §7Stone§r into §7Bricks§r and §eAncient Debris§r into §2Deepslate Verdanite Ore§r.",
+  "tooltip.blocksmith.verdanite_apple": "Gives §eSaturation§r after consumed."
 }

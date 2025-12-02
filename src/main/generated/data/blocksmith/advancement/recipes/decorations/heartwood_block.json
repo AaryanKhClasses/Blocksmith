@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_heartwood_chunk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blocksmith:heartwood_chunk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blocksmith:heartwood_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_heartwood_chunk"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blocksmith:heartwood_block"
+    ]
+  }
+}

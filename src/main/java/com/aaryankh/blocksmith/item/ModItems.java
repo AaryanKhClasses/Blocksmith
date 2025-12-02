@@ -3,9 +3,14 @@ package com.aaryankh.blocksmith.item;
 import com.aaryankh.blocksmith.Blocksmith;
 import com.aaryankh.blocksmith.item.custom.ChiselItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
+import java.util.List;
 
 public class ModItems {
     private static Item registerItem(String name, Item item) {
@@ -17,7 +22,12 @@ public class ModItems {
     public static final Item VERDANITE_INGOT = registerItem("verdanite_ingot", new Item(new Item.Settings()));
 
     public static final Item VERDANITE_CHISEL = registerItem("verdanite_chisel", new ChiselItem(new Item.Settings().maxDamage(32)));
-    public static final Item VERDANITE_APPLE = registerItem("verdanite_apple", new Item(new Item.Settings().food(ModFoodComponents.VERDANITE_APPLE)));
+    public static final Item VERDANITE_APPLE = registerItem("verdanite_apple", new Item(new Item.Settings().food(ModFoodComponents.VERDANITE_APPLE)) {
+        @Override
+        public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+            tooltip.add(Text.translatable("tooltip.blocksmith.verdanite_apple"));
+        }
+    });
     public static final Item MYSTITE_COAL = registerItem("mystite_coal", new Item(new Item.Settings()));
 
     public static void registerModItems() {

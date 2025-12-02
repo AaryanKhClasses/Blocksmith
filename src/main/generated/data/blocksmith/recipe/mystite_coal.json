@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "blocksmith:mystite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "blocksmith:mystite_coal"
+  }
+}

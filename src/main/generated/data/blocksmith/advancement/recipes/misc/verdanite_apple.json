@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blocksmith:verdanite_apple"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_verdanite_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blocksmith:verdanite_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_verdanite_apple"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blocksmith:verdanite_apple"
+    ]
+  }
+}
