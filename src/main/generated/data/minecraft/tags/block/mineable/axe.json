@@ -1,5 +1,14 @@
 {
   "values": [
-    "blocksmith:heartwood_block"
+    "blocksmith:heartwood_block",
+    "blocksmith:heartwood_stairs",
+    "blocksmith:heartwood_slab",
+    "blocksmith:heartwood_button",
+    "blocksmith:heartwood_pressure_plate",
+    "blocksmith:heartwood_trapdoor",
+    "blocksmith:heartwood_door",
+    "blocksmith:heartwood_fence",
+    "blocksmith:heartwood_fence_gate",
+    "blocksmith:heartwood_wall"
   ]
 }

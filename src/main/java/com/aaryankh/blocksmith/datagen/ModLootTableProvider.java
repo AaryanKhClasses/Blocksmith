@@ -18,6 +18,15 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.VERDANITE_BLOCK);
         addDrop(ModBlocks.HEARTWOOD_BLOCK);
         addDrop(ModBlocks.MYSTITE_BLOCK);
+        addDrop(ModBlocks.HEARTWOOD_STAIRS);
+        addDrop(ModBlocks.HEARTWOOD_SLAB, slabDrops(ModBlocks.HEARTWOOD_SLAB));
+        addDrop(ModBlocks.HEARTWOOD_BUTTON);
+        addDrop(ModBlocks.HEARTWOOD_PRESSURE_PLATE);
+        addDrop(ModBlocks.HEARTWOOD_DOOR, doorDrops(ModBlocks.HEARTWOOD_DOOR));
+        addDrop(ModBlocks.HEARTWOOD_TRAPDOOR);
+        addDrop(ModBlocks.HEARTWOOD_FENCE);
+        addDrop(ModBlocks.HEARTWOOD_FENCE_GATE);
+        addDrop(ModBlocks.HEARTWOOD_WALL);
         addDrop(ModBlocks.VERDANITE_ORE, oreDrops(ModBlocks.VERDANITE_ORE, ModItems.RAW_VERDANITE));
         addDrop(ModBlocks.DEEPSLATE_VERDANITE_ORE, oreDrops(ModBlocks.DEEPSLATE_VERDANITE_ORE, ModItems.RAW_VERDANITE));
     }

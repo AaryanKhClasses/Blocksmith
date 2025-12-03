@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "blocksmith:block/heartwood_door_bottom",
+    "top": "blocksmith:block/heartwood_door_top"
+  }
+}

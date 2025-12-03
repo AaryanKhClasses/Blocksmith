@@ -24,7 +24,17 @@ public class ModItemGroups {
                         entries.add(ModItems.VERDANITE_CHISEL);
                         entries.add(ModItems.VERDANITE_APPLE);
                         entries.add(ModItems.MYSTITE_COAL);
+
                         entries.add(ModBlocks.HEARTWOOD_BLOCK);
+                        entries.add(ModBlocks.HEARTWOOD_STAIRS);
+                        entries.add(ModBlocks.HEARTWOOD_SLAB);
+                        entries.add(ModBlocks.HEARTWOOD_BUTTON);
+                        entries.add(ModBlocks.HEARTWOOD_PRESSURE_PLATE);
+                        entries.add(ModBlocks.HEARTWOOD_TRAPDOOR);
+                        entries.add(ModBlocks.HEARTWOOD_DOOR);
+                        entries.add(ModBlocks.HEARTWOOD_FENCE);
+                        entries.add(ModBlocks.HEARTWOOD_FENCE_GATE);
+                        entries.add(ModBlocks.HEARTWOOD_WALL);
                         entries.add(ModBlocks.VERDANITE_ORE);
                         entries.add(ModBlocks.DEEPSLATE_VERDANITE_ORE);
                         entries.add(ModBlocks.VERDANITE_BLOCK);

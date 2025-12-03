@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "blocksmith:block/heartwood_block",
+    "side": "blocksmith:block/heartwood_block",
+    "top": "blocksmith:block/heartwood_block"
+  }
+}

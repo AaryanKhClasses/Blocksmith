@@ -8,6 +8,7 @@ import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 
@@ -46,6 +47,31 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('I', ModItems.VERDANITE_INGOT)
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModItems.VERDANITE_CHISEL), conditionsFromItem(ModItems.VERDANITE_CHISEL))
+                .offerTo(recipeExporter);
+
+        createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.HEARTWOOD_SLAB, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
+                .criterion(hasItem(ModBlocks.HEARTWOOD_SLAB), conditionsFromItem(ModBlocks.HEARTWOOD_SLAB))
+                .offerTo(recipeExporter);
+        createStairsRecipe(ModBlocks.HEARTWOOD_STAIRS, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
+                .criterion(hasItem(ModBlocks.HEARTWOOD_STAIRS), conditionsFromItem(ModBlocks.HEARTWOOD_STAIRS))
+                .offerTo(recipeExporter);
+        createPressurePlateRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.HEARTWOOD_PRESSURE_PLATE, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
+                .criterion(hasItem(ModBlocks.HEARTWOOD_PRESSURE_PLATE), conditionsFromItem(ModBlocks.HEARTWOOD_PRESSURE_PLATE))
+                .offerTo(recipeExporter);
+        createFenceRecipe(ModBlocks.HEARTWOOD_FENCE, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
+                .criterion(hasItem(ModBlocks.HEARTWOOD_FENCE), conditionsFromItem(ModBlocks.HEARTWOOD_FENCE))
+                .offerTo(recipeExporter);
+        createFenceGateRecipe(ModBlocks.HEARTWOOD_FENCE_GATE, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
+                .criterion(hasItem(ModBlocks.HEARTWOOD_FENCE_GATE), conditionsFromItem(ModBlocks.HEARTWOOD_FENCE_GATE))
+                .offerTo(recipeExporter);
+        getWallRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.HEARTWOOD_WALL, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
+                .criterion(hasItem(ModBlocks.HEARTWOOD_WALL), conditionsFromItem(ModBlocks.HEARTWOOD_WALL))
+                .offerTo(recipeExporter);
+        createDoorRecipe(ModBlocks.HEARTWOOD_DOOR, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
+                .criterion(hasItem(ModBlocks.HEARTWOOD_DOOR), conditionsFromItem(ModBlocks.HEARTWOOD_DOOR))
+                .offerTo(recipeExporter);
+        createTrapdoorRecipe(ModBlocks.HEARTWOOD_TRAPDOOR, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
+                .criterion(hasItem(ModBlocks.HEARTWOOD_TRAPDOOR), conditionsFromItem(ModBlocks.HEARTWOOD_TRAPDOOR))
                 .offerTo(recipeExporter);
     }
 }

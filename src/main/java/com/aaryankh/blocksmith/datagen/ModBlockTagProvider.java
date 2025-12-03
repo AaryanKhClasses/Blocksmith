@@ -21,7 +21,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.VERDANITE_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocks.HEARTWOOD_BLOCK);
+                .add(ModBlocks.HEARTWOOD_BLOCK)
+                .add(ModBlocks.HEARTWOOD_STAIRS)
+                .add(ModBlocks.HEARTWOOD_SLAB)
+                .add(ModBlocks.HEARTWOOD_BUTTON)
+                .add(ModBlocks.HEARTWOOD_PRESSURE_PLATE)
+                .add(ModBlocks.HEARTWOOD_TRAPDOOR)
+                .add(ModBlocks.HEARTWOOD_DOOR)
+                .add(ModBlocks.HEARTWOOD_FENCE)
+                .add(ModBlocks.HEARTWOOD_FENCE_GATE)
+                .add(ModBlocks.HEARTWOOD_WALL);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.MYSTITE_BLOCK);
@@ -29,5 +38,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.VERDANITE_ORE)
                 .add(ModBlocks.DEEPSLATE_VERDANITE_ORE);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS).add(ModBlocks.HEARTWOOD_STAIRS);
+        getOrCreateTagBuilder(BlockTags.WOODEN_SLABS).add(ModBlocks.HEARTWOOD_SLAB);
+        getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS).add(ModBlocks.HEARTWOOD_BUTTON);
+        getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES).add(ModBlocks.HEARTWOOD_PRESSURE_PLATE);
+        getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(ModBlocks.HEARTWOOD_DOOR);
+        getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(ModBlocks.HEARTWOOD_TRAPDOOR);
+        getOrCreateTagBuilder(BlockTags.WOODEN_FENCES).add(ModBlocks.HEARTWOOD_FENCE);
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(ModBlocks.HEARTWOOD_FENCE_GATE);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(ModBlocks.HEARTWOOD_WALL);
     }
 }

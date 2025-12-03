@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blocksmith:block/heartwood_slab"
+    },
+    "type=double": {
+      "model": "blocksmith:block/heartwood_block"
+    },
+    "type=top": {
+      "model": "blocksmith:block/heartwood_slab_top"
+    }
+  }
+}
