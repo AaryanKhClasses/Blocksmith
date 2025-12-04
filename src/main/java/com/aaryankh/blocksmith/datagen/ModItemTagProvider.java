@@ -1,10 +1,12 @@
 package com.aaryankh.blocksmith.datagen;
 
+import com.aaryankh.blocksmith.item.ModItems;
 import com.aaryankh.blocksmith.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -18,5 +20,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ModTags.Items.MYSTITE_CONVERTIBLE)
                 .add(Items.ANCIENT_DEBRIS)
                 .add(Items.NETHERITE_SCRAP);
+
+        getOrCreateTagBuilder(ItemTags.SWORDS).add(ModItems.VERDANITE_SWORD);
+        getOrCreateTagBuilder(ItemTags.PICKAXES).add(ModItems.VERDANITE_PICKAXE);
+        getOrCreateTagBuilder(ItemTags.AXES).add(ModItems.VERDANITE_AXE);
+        getOrCreateTagBuilder(ItemTags.SHOVELS).add(ModItems.VERDANITE_SHOVEL);
+        getOrCreateTagBuilder(ItemTags.HOES).add(ModItems.VERDANITE_HOE);
     }
 }

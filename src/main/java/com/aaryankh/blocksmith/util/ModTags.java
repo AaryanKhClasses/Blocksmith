@@ -9,6 +9,9 @@ import net.minecraft.util.Identifier;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> NEEDS_VERDANITE_TOOL = createTag("needs_verdanite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_VERDANITE_TOOL = createTag("incorrect_for_verdanite_tool");
+
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Blocksmith.MOD_ID, name));
         }

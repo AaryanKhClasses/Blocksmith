@@ -22,6 +22,11 @@ public class ModItemGroups {
                         entries.add(ModItems.RAW_VERDANITE);
                         entries.add(ModItems.VERDANITE_INGOT);
                         entries.add(ModItems.VERDANITE_CHISEL);
+                        entries.add(ModItems.VERDANITE_SWORD);
+                        entries.add(ModItems.VERDANITE_PICKAXE);
+                        entries.add(ModItems.VERDANITE_AXE);
+                        entries.add(ModItems.VERDANITE_SHOVEL);
+                        entries.add(ModItems.VERDANITE_HOE);
                         entries.add(ModItems.VERDANITE_APPLE);
                         entries.add(ModItems.MYSTITE_COAL);
 

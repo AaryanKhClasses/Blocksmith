@@ -49,6 +49,51 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.VERDANITE_CHISEL), conditionsFromItem(ModItems.VERDANITE_CHISEL))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VERDANITE_SWORD)
+                .pattern("I")
+                .pattern("I")
+                .pattern("S")
+                .input('I', ModItems.VERDANITE_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.VERDANITE_SWORD), conditionsFromItem(ModItems.VERDANITE_SWORD))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VERDANITE_PICKAXE)
+                .pattern("III")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('I', ModItems.VERDANITE_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.VERDANITE_PICKAXE), conditionsFromItem(ModItems.VERDANITE_PICKAXE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VERDANITE_AXE)
+                .pattern(" II")
+                .pattern(" SI")
+                .pattern(" S ")
+                .input('I', ModItems.VERDANITE_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.VERDANITE_AXE), conditionsFromItem(ModItems.VERDANITE_AXE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VERDANITE_SHOVEL)
+                .pattern("I")
+                .pattern("S")
+                .pattern("S")
+                .input('I', ModItems.VERDANITE_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.VERDANITE_SHOVEL), conditionsFromItem(ModItems.VERDANITE_SHOVEL))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VERDANITE_HOE)
+                .pattern("II")
+                .pattern("S ")
+                .pattern("S ")
+                .input('I', ModItems.VERDANITE_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.VERDANITE_HOE), conditionsFromItem(ModItems.VERDANITE_HOE))
+                .offerTo(recipeExporter);
+
         createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.HEARTWOOD_SLAB, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
                 .criterion(hasItem(ModBlocks.HEARTWOOD_SLAB), conditionsFromItem(ModBlocks.HEARTWOOD_SLAB))
                 .offerTo(recipeExporter);

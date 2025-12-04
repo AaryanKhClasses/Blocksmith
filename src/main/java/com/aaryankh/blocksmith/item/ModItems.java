@@ -2,8 +2,7 @@ package com.aaryankh.blocksmith.item;
 
 import com.aaryankh.blocksmith.Blocksmith;
 import com.aaryankh.blocksmith.item.custom.ChiselItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -22,6 +21,11 @@ public class ModItems {
     public static final Item VERDANITE_INGOT = registerItem("verdanite_ingot", new Item(new Item.Settings()));
 
     public static final Item VERDANITE_CHISEL = registerItem("verdanite_chisel", new ChiselItem(new Item.Settings().maxDamage(32)));
+    public static final Item VERDANITE_SWORD = registerItem("verdanite_sword", new SwordItem(ModToolMaterials.VERDANITE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.VERDANITE, 3, -2.4F))));
+    public static final Item VERDANITE_PICKAXE = registerItem("verdanite_pickaxe", new PickaxeItem(ModToolMaterials.VERDANITE, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.VERDANITE, 1.0F, -2.8F))));
+    public static final Item VERDANITE_AXE = registerItem("verdanite_axe", new AxeItem(ModToolMaterials.VERDANITE, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.VERDANITE, 6.0F, -3.1F))));
+    public static final Item VERDANITE_SHOVEL = registerItem("verdanite_shovel", new ShovelItem(ModToolMaterials.VERDANITE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.VERDANITE, 1.5F, -3.0F))));
+    public static final Item VERDANITE_HOE = registerItem("verdanite_hoe", new HoeItem(ModToolMaterials.VERDANITE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.VERDANITE, -2.0F, -1.0F))));
     public static final Item VERDANITE_APPLE = registerItem("verdanite_apple", new Item(new Item.Settings().food(ModFoodComponents.VERDANITE_APPLE)) {
         @Override
         public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {

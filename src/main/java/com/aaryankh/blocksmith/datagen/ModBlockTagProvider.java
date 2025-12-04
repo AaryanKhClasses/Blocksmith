@@ -1,6 +1,7 @@
 package com.aaryankh.blocksmith.datagen;
 
 import com.aaryankh.blocksmith.block.ModBlocks;
+import com.aaryankh.blocksmith.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -48,5 +49,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WOODEN_FENCES).add(ModBlocks.HEARTWOOD_FENCE);
         getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(ModBlocks.HEARTWOOD_FENCE_GATE);
         getOrCreateTagBuilder(BlockTags.WALLS).add(ModBlocks.HEARTWOOD_WALL);
+
+        getOrCreateTagBuilder(ModTags.Blocks.NEEDS_VERDANITE_TOOL).forceAddTag(BlockTags.NEEDS_DIAMOND_TOOL);
     }
 }

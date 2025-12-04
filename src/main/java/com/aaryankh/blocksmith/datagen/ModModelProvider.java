@@ -40,5 +40,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MYSTITE_COAL, Models.GENERATED);
         itemModelGenerator.register(ModItems.VERDANITE_APPLE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VERDANITE_CHISEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VERDANITE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VERDANITE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VERDANITE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VERDANITE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VERDANITE_HOE, Models.HANDHELD);
     }
 }
