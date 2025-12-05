@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mystite_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blocksmith:mystite_helmet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "blocksmith:mystite_helmet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mystite_helmet"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "blocksmith:mystite_helmet"
+    ]
+  }
+}

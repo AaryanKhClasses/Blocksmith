@@ -94,6 +94,45 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.VERDANITE_HOE), conditionsFromItem(ModItems.VERDANITE_HOE))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.MYSTITE_HAMMER)
+                .pattern("BBB")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('B', ModBlocks.MYSTITE_BLOCK)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.MYSTITE_HAMMER), conditionsFromItem(ModItems.MYSTITE_HAMMER))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.MYSTITE_HELMET)
+                .pattern("BBB")
+                .pattern("B B")
+                .input('B', ModBlocks.MYSTITE_BLOCK)
+                .criterion(hasItem(ModItems.MYSTITE_HELMET), conditionsFromItem(ModItems.MYSTITE_HELMET))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.MYSTITE_CHESTPLATE)
+                .pattern("B B")
+                .pattern("BBB")
+                .pattern("BBB")
+                .input('B', ModBlocks.MYSTITE_BLOCK)
+                .criterion(hasItem(ModItems.MYSTITE_CHESTPLATE), conditionsFromItem(ModItems.MYSTITE_CHESTPLATE))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.MYSTITE_LEGGINGS)
+                .pattern("BBB")
+                .pattern("B B")
+                .pattern("B B")
+                .input('B', ModBlocks.MYSTITE_BLOCK)
+                .criterion(hasItem(ModItems.MYSTITE_LEGGINGS), conditionsFromItem(ModItems.MYSTITE_LEGGINGS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.MYSTITE_BOOTS)
+                .pattern("B B")
+                .pattern("B B")
+                .input('B', ModBlocks.MYSTITE_BLOCK)
+                .criterion(hasItem(ModItems.MYSTITE_BOOTS), conditionsFromItem(ModItems.MYSTITE_BOOTS))
+                .offerTo(recipeExporter);
+
         createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.HEARTWOOD_SLAB, Ingredient.ofItems(ModItems.HEARTWOOD_CHUNK))
                 .criterion(hasItem(ModBlocks.HEARTWOOD_SLAB), conditionsFromItem(ModBlocks.HEARTWOOD_SLAB))
                 .offerTo(recipeExporter);

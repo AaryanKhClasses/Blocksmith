@@ -26,5 +26,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.AXES).add(ModItems.VERDANITE_AXE);
         getOrCreateTagBuilder(ItemTags.SHOVELS).add(ModItems.VERDANITE_SHOVEL);
         getOrCreateTagBuilder(ItemTags.HOES).add(ModItems.VERDANITE_HOE);
+
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.MYSTITE_HELMET)
+                .add(ModItems.MYSTITE_CHESTPLATE)
+                .add(ModItems.MYSTITE_LEGGINGS)
+                .add(ModItems.MYSTITE_BOOTS);
     }
 }

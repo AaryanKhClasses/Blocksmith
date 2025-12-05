@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -38,6 +39,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RAW_VERDANITE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VERDANITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.MYSTITE_COAL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MYSTITE_HAMMER, Models.HANDHELD);
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.MYSTITE_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.MYSTITE_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.MYSTITE_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.MYSTITE_BOOTS));
+
         itemModelGenerator.register(ModItems.VERDANITE_APPLE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VERDANITE_CHISEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.VERDANITE_SWORD, Models.HANDHELD);

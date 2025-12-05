@@ -2,6 +2,7 @@ package com.aaryankh.blocksmith.item;
 
 import com.aaryankh.blocksmith.Blocksmith;
 import com.aaryankh.blocksmith.item.custom.ChiselItem;
+import com.aaryankh.blocksmith.item.custom.HammerItem;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
@@ -33,6 +34,11 @@ public class ModItems {
         }
     });
     public static final Item MYSTITE_COAL = registerItem("mystite_coal", new Item(new Item.Settings()));
+    public static final Item MYSTITE_HAMMER = registerItem("mystite_hammer", new HammerItem(ModToolMaterials.VERDANITE, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.VERDANITE, 6.0F, -4.0F))));
+    public static final Item MYSTITE_HELMET = registerItem("mystite_helmet", new ArmorItem(ModArmorMaterials.MYSTITE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(35))));
+    public static final Item MYSTITE_CHESTPLATE = registerItem("mystite_chestplate", new ArmorItem(ModArmorMaterials.MYSTITE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(35))));
+    public static final Item MYSTITE_LEGGINGS = registerItem("mystite_leggings", new ArmorItem(ModArmorMaterials.MYSTITE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(35))));
+    public static final Item MYSTITE_BOOTS = registerItem("mystite_boots", new ArmorItem(ModArmorMaterials.MYSTITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(35))));
 
     public static void registerModItems() {
         Blocksmith.LOGGER.info("Registering ModItems for: " + Blocksmith.MOD_ID);
