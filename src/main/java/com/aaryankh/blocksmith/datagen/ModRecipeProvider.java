@@ -103,6 +103,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.MYSTITE_HAMMER), conditionsFromItem(ModItems.MYSTITE_HAMMER))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.MYSTITE_BOW)
+                .pattern(" BS")
+                .pattern("B S")
+                .pattern(" BS")
+                .input('B', ModBlocks.MYSTITE_BLOCK)
+                .input('S', Items.STRING)
+                .criterion(hasItem(ModItems.MYSTITE_BOW), conditionsFromItem(ModItems.MYSTITE_BOW))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.MYSTITE_HELMET)
                 .pattern("BBB")
                 .pattern("B B")

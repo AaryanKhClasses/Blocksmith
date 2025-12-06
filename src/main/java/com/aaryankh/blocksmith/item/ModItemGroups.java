@@ -30,6 +30,7 @@ public class ModItemGroups {
                         entries.add(ModItems.VERDANITE_APPLE);
                         entries.add(ModItems.MYSTITE_COAL);
                         entries.add(ModItems.MYSTITE_HAMMER);
+                        entries.add(ModItems.MYSTITE_BOW);
                         entries.add(ModItems.MYSTITE_HELMET);
                         entries.add(ModItems.MYSTITE_CHESTPLATE);
                         entries.add(ModItems.MYSTITE_LEGGINGS);
