@@ -19,6 +19,8 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> MYSTITE_CONVERTIBLE = createTag("mystite_convertible");
+        public static final TagKey<Item> LIGHTNING_ENCHANTABLE = createTag("lightning_enchantable");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Blocksmith.MOD_ID, name));
         }

@@ -1,8 +1,13 @@
 package com.aaryankh.blocksmith;
 
 import com.aaryankh.blocksmith.datagen.*;
+import com.aaryankh.blocksmith.enchantment.ModEnchantments;
+import com.aaryankh.blocksmith.world.ModConfiguredFeatures;
+import com.aaryankh.blocksmith.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 public class BlocksmithDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -13,5 +18,13 @@ public class BlocksmithDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModLootTableProvider::new);
         pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModRecipeProvider::new);
+        pack.addProvider(ModRegistryDataGenerator::new);
+    }
+
+    @Override
+    public void buildRegistry(RegistryBuilder registryBuilder) {
+        registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
     }
 }

@@ -1,9 +1,11 @@
 package com.aaryankh.blocksmith;
 
 import com.aaryankh.blocksmith.block.ModBlocks;
+import com.aaryankh.blocksmith.enchantment.ModEnchantmentEffects;
 import com.aaryankh.blocksmith.item.ModItemGroups;
 import com.aaryankh.blocksmith.item.ModItems;
 import com.aaryankh.blocksmith.util.HammerUsageEvent;
+import com.aaryankh.blocksmith.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -20,6 +22,8 @@ public class Blocksmith implements ModInitializer {
         ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+        ModEnchantmentEffects.registerEnchantmentEffects();
+        ModWorldGeneration.generateModWorldGen();
 
         FuelRegistry.INSTANCE.add(ModItems.MYSTITE_COAL, 20000);
         PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());

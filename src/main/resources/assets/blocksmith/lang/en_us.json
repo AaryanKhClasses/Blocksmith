@@ -36,5 +36,7 @@
   "tooltip.blocksmith.mystite_block": "Converts §eAncient Debris§r into 2 §2Verdanite Ingots§r on Dropping.",
   "tooltip.blocksmith.chisel": "Converts blocks on right click. Press §eSHIFT§r for more info.",
   "tooltip.blocksmith.chisel.shift_down": "Converts §7Stone§r into §7Bricks§r and §eAncient Debris§r into §2Deepslate Verdanite Ore§r.",
-  "tooltip.blocksmith.verdanite_apple": "Gives §eSaturation§r after consumed."
+  "tooltip.blocksmith.verdanite_apple": "Gives §eSaturation§r after consumed.",
+
+  "enchantment.blocksmith.lightning_hitter": "Lightning Hitter"
 }

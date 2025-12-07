@@ -51,5 +51,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WALLS).add(ModBlocks.HEARTWOOD_WALL);
 
         getOrCreateTagBuilder(ModTags.Blocks.NEEDS_VERDANITE_TOOL).forceAddTag(BlockTags.NEEDS_DIAMOND_TOOL);
+
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(ModBlocks.HEARTWOOD_BLOCK);
     }
 }

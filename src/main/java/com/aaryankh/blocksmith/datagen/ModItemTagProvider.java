@@ -21,6 +21,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.ANCIENT_DEBRIS)
                 .add(Items.NETHERITE_SCRAP);
 
+        getOrCreateTagBuilder(ModTags.Items.LIGHTNING_ENCHANTABLE).add(ModItems.MYSTITE_HAMMER);
+
         getOrCreateTagBuilder(ItemTags.SWORDS).add(ModItems.VERDANITE_SWORD);
         getOrCreateTagBuilder(ItemTags.PICKAXES).add(ModItems.VERDANITE_PICKAXE);
         getOrCreateTagBuilder(ItemTags.AXES).add(ModItems.VERDANITE_AXE);
