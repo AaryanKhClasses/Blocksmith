@@ -1,7 +1,9 @@
 package com.aaryankh.blocksmith.block;
 
 import com.aaryankh.blocksmith.Blocksmith;
+import com.aaryankh.blocksmith.block.custom.ConverterBlock;
 import com.aaryankh.blocksmith.block.custom.MystiteBlock;
+import com.aaryankh.blocksmith.block.custom.PedestalBlock;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -34,7 +36,9 @@ public class ModBlocks {
     public static final Block VERDANITE_ORE = registerBlock("verdanite_ore", new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.STONE)));
     public static final Block DEEPSLATE_VERDANITE_ORE = registerBlock("deepslate_verdanite_ore", new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.STONE)));
     public static final Block VERDANITE_BLOCK = registerBlock("verdanite_block", new Block(AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.STONE)));
-    public static final Block MYSTITE_BLOCK = registerBlock("mystite_block", new MystiteBlock(AbstractBlock.Settings.create().strength(4f).sounds(BlockSoundGroup.GRASS)));
+    public static final Block MYSTITE_BLOCK = registerBlock("mystite_block", new MystiteBlock(AbstractBlock.Settings.create().strength(4f).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+    public static final Block PEDESTAL_BLOCK = registerBlock("pedestal_block", new PedestalBlock(AbstractBlock.Settings.create().strength(4f).requiresTool().nonOpaque().sounds(BlockSoundGroup.STONE)));
+    public static final Block CONVERTER_BLOCK = registerBlock("converter_block", new ConverterBlock(AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.STONE)));
 
     public static void registerModBlocks() {
         Blocksmith.LOGGER.info("Registering ModBlocks for: " + Blocksmith.MOD_ID);

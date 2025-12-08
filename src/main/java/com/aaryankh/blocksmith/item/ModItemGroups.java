@@ -50,6 +50,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.DEEPSLATE_VERDANITE_ORE);
                         entries.add(ModBlocks.VERDANITE_BLOCK);
                         entries.add(ModBlocks.MYSTITE_BLOCK);
+                        entries.add(ModBlocks.PEDESTAL_BLOCK);
+                        entries.add(ModBlocks.CONVERTER_BLOCK);
                     }).build()
     );
 

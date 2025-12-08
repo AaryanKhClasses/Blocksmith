@@ -2,6 +2,8 @@
   "values": [
     "blocksmith:verdanite_ore",
     "blocksmith:deepslate_verdanite_ore",
-    "blocksmith:verdanite_block"
+    "blocksmith:verdanite_block",
+    "blocksmith:pedestal_block",
+    "blocksmith:converter_block"
   ]
 }

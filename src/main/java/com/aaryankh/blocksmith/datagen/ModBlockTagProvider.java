@@ -19,7 +19,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.VERDANITE_ORE)
                 .add(ModBlocks.DEEPSLATE_VERDANITE_ORE)
-                .add(ModBlocks.VERDANITE_BLOCK);
+                .add(ModBlocks.VERDANITE_BLOCK)
+                .add(ModBlocks.PEDESTAL_BLOCK)
+                .add(ModBlocks.CONVERTER_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.HEARTWOOD_BLOCK)

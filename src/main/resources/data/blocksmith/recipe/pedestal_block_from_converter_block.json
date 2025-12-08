@@ -1,0 +1,9 @@
+{
+  "type": "blocksmith:converter_block",
+  "ingredient": {
+    "item": "minecraft:lectern"
+  },
+  "result": {
+    "id": "blocksmith:pedestal_block"
+  }
+}

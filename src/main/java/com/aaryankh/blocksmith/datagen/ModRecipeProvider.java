@@ -40,6 +40,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.VERDANITE_APPLE), conditionsFromItem(ModItems.VERDANITE_APPLE))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CONVERTER_BLOCK)
+                .pattern("SSS")
+                .pattern("SBS")
+                .pattern("SSS")
+                .input('B', ModBlocks.VERDANITE_BLOCK)
+                .input('S', Items.STONE)
+                .criterion(hasItem(ModBlocks.CONVERTER_BLOCK), conditionsFromItem(ModBlocks.CONVERTER_BLOCK))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VERDANITE_CHISEL)
                 .pattern("  I")
                 .pattern(" S ")

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "blocksmith:verdanite_block"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SBS",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "blocksmith:converter_block"
+  }
+}
