@@ -5,16 +5,14 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.RecipeType;
+import net.minecraft.recipe.*;
+import net.minecraft.recipe.book.RecipeBookCategories;
+import net.minecraft.recipe.book.RecipeBookCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 public record ConverterBlockRecipe(Ingredient inputItem, ItemStack output) implements Recipe<ConverterBlockRecipeInput> {
-    @Override
     public DefaultedList<Ingredient> getIngredients() {
         DefaultedList<Ingredient> list = DefaultedList.of();
         list.add(inputItem);
@@ -33,28 +31,28 @@ public record ConverterBlockRecipe(Ingredient inputItem, ItemStack output) imple
     }
 
     @Override
-    public boolean fits(int width, int height) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) {
-        return output;
-    }
-
-    @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends Recipe<ConverterBlockRecipeInput>> getSerializer() {
         return ModRecipes.CONVERTER_BLOCK_SERIALIZER;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends Recipe<ConverterBlockRecipeInput>> getType() {
         return ModRecipes.CONVERTER_BLOCK_TYPE;
+    }
+
+    @Override
+    public IngredientPlacement getIngredientPlacement() {
+        return IngredientPlacement.forSingleSlot(inputItem);
+    }
+
+    @Override
+    public RecipeBookCategory getRecipeBookCategory() {
+        return RecipeBookCategories.CRAFTING_MISC;
     }
 
     public static class Serializer implements RecipeSerializer<ConverterBlockRecipe> {
         public static final MapCodec<ConverterBlockRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
-            Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient").forGetter(ConverterBlockRecipe::inputItem),
+            Ingredient.CODEC.fieldOf("ingredient").forGetter(ConverterBlockRecipe::inputItem),
             ItemStack.CODEC.fieldOf("result").forGetter(ConverterBlockRecipe::output)
         ).apply(inst, ConverterBlockRecipe::new));
 

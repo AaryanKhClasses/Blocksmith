@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "blocksmith:mystite_coal"
-    }
+    "#": "blocksmith:mystite_coal"
   },
   "pattern": [
     "###",

@@ -22,7 +22,11 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.text.Text;
+import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -86,6 +90,12 @@ public class ConverterBlockEntity extends BlockEntity implements ExtendedScreenH
         return new ConverterBlockScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
+    @Override
+    public void onBlockReplaced(BlockPos pos, BlockState oldState) {
+        ItemScatterer.spawn(world, pos, (this));
+        super.onBlockReplaced(pos, oldState);
+    }
+
     public void tick(World world1, BlockPos pos, BlockState state) {
         if(hasRecipe()) {
             this.progress++;
@@ -103,7 +113,7 @@ public class ConverterBlockEntity extends BlockEntity implements ExtendedScreenH
 
     private void craftItem() {
         assert this.getWorld() != null;
-        Optional<RecipeEntry<ConverterBlockRecipe>> recipe = this.getWorld().getRecipeManager().getFirstMatch(ModRecipes.CONVERTER_BLOCK_TYPE, new ConverterBlockRecipeInput(inv.get(INPUT_SLOT)), this.getWorld());
+        Optional<RecipeEntry<ConverterBlockRecipe>> recipe = ((ServerWorld) this.getWorld()).getRecipeManager().getFirstMatch(ModRecipes.CONVERTER_BLOCK_TYPE, new ConverterBlockRecipeInput(inv.get(INPUT_SLOT)), this.getWorld());
         ItemStack output = recipe.get().value().output();
         this.removeStack(INPUT_SLOT, 1);
         this.setStack(OUTPUT_SLOT, new ItemStack(output.getItem(), this.getStack(OUTPUT_SLOT).getCount() + output.getCount()));
@@ -111,7 +121,7 @@ public class ConverterBlockEntity extends BlockEntity implements ExtendedScreenH
 
     private boolean hasRecipe() {
         assert this.getWorld() != null;
-        Optional<RecipeEntry<ConverterBlockRecipe>> recipe = this.getWorld().getRecipeManager().getFirstMatch(ModRecipes.CONVERTER_BLOCK_TYPE, new ConverterBlockRecipeInput(inv.get(INPUT_SLOT)), this.getWorld());
+        Optional<RecipeEntry<ConverterBlockRecipe>> recipe = ((ServerWorld) this.getWorld()).getRecipeManager().getFirstMatch(ModRecipes.CONVERTER_BLOCK_TYPE, new ConverterBlockRecipeInput(inv.get(INPUT_SLOT)), this.getWorld());
         if(recipe.isEmpty()) return false;
         ItemStack output = recipe.get().value().output();
 
@@ -129,19 +139,19 @@ public class ConverterBlockEntity extends BlockEntity implements ExtendedScreenH
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.writeNbt(nbt, registryLookup);
-        Inventories.writeNbt(nbt, inv, registryLookup);
-        nbt.putInt("converter_block.progress", progress);
-        nbt.putInt("converter_block.max_progress", maxProgress);
+    protected void writeData(WriteView view) {
+        super.writeData(view);
+        Inventories.writeData(view, inv);
+        view.putInt("converter_block.progress", progress);
+        view.putInt("converter_block.max_progress", maxProgress);
     }
 
     @Override
-    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        Inventories.readNbt(nbt, inv, registryLookup);
-        progress = nbt.getInt("converter_block.progress");
-        maxProgress = nbt.getInt("converter_block.max_progress");
-        super.readNbt(nbt, registryLookup);
+    protected void readData(ReadView view) {
+        super.readData(view);
+        Inventories.readData(view, inv);
+        progress = view.getInt("converter_block.progress", 0);
+        maxProgress = view.getInt("converter_block.max_progress", 0);
     }
 
     @Override

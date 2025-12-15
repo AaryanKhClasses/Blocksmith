@@ -1,14 +1,13 @@
 package com.aaryankh.blocksmith.datagen;
 
 import com.aaryankh.blocksmith.block.ModBlocks;
+import com.aaryankh.blocksmith.item.ModArmorMaterials;
 import com.aaryankh.blocksmith.item.ModItems;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
-import net.minecraft.item.ArmorItem;
-
+import net.minecraft.client.data.BlockStateModelGenerator;
+import net.minecraft.client.data.ItemModelGenerator;
+import net.minecraft.client.data.Models;
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
@@ -41,10 +40,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.VERDANITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.MYSTITE_COAL, Models.GENERATED);
         itemModelGenerator.register(ModItems.MYSTITE_HAMMER, Models.HANDHELD);
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.MYSTITE_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.MYSTITE_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.MYSTITE_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.MYSTITE_BOOTS));
+        itemModelGenerator.upload(ModItems.MYSTITE_BOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.MYSTITE_BOW);
+        itemModelGenerator.registerArmor(ModItems.MYSTITE_HELMET, ModArmorMaterials.MYSTITE_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.MYSTITE_CHESTPLATE, ModArmorMaterials.MYSTITE_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.MYSTITE_LEGGINGS, ModArmorMaterials.MYSTITE_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.MYSTITE_BOOTS, ModArmorMaterials.MYSTITE_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
         itemModelGenerator.register(ModItems.VERDANITE_APPLE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VERDANITE_CHISEL, Models.GENERATED);

@@ -11,7 +11,7 @@ import com.aaryankh.blocksmith.util.HammerUsageEvent;
 import com.aaryankh.blocksmith.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +31,9 @@ public class Blocksmith implements ModInitializer {
         ModScreenHandlers.registerScreenHandlers();
         ModRecipes.registerRecipes();
 
-        FuelRegistry.INSTANCE.add(ModItems.MYSTITE_COAL, 20000);
+        FuelRegistryEvents.BUILD.register((builder, context) -> {
+            builder.add(ModItems.MYSTITE_COAL, 20000);
+        });
         PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
     }
 }

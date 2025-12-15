@@ -1,0 +1,24 @@
+{
+  "layers": {
+    "wolf_body": [
+      {
+        "texture": "blocksmith:mystite"
+      }
+    ],
+    "horse_body": [
+      {
+        "texture": "blocksmith:mystite"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "blocksmith:mystite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "blocksmith:mystite"
+      }
+    ]
+  }
+}

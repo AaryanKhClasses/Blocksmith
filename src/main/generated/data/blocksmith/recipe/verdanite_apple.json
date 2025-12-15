@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:apple"
-    },
-    "I": {
-      "item": "blocksmith:verdanite_ingot"
-    }
+    "A": "minecraft:apple",
+    "I": "blocksmith:verdanite_ingot"
   },
   "pattern": [
     "III",

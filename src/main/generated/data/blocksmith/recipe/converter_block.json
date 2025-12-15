@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "blocksmith:verdanite_block"
-    },
-    "S": {
-      "item": "minecraft:stone"
-    }
+    "B": "blocksmith:verdanite_block",
+    "S": "minecraft:stone"
   },
   "pattern": [
     "SSS",

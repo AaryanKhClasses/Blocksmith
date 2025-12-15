@@ -1,8 +1,6 @@
 {
   "type": "blocksmith:converter_block",
-  "ingredient": {
-    "item": "blocksmith:verdanite_block"
-  },
+  "ingredient": "blocksmith:verdanite_block",
   "result": {
     "id": "blocksmith:mystite_coal",
     "count": 2

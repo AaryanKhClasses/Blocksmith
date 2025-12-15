@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "B": {
-      "item": "blocksmith:mystite_block"
-    },
-    "S": {
-      "item": "minecraft:string"
-    }
+    "B": "blocksmith:mystite_block",
+    "S": "minecraft:string"
   },
   "pattern": [
     " BS",

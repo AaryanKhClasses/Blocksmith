@@ -16,14 +16,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.VERDANITE_ORE)
                 .add(ModBlocks.DEEPSLATE_VERDANITE_ORE)
                 .add(ModBlocks.VERDANITE_BLOCK)
                 .add(ModBlocks.PEDESTAL_BLOCK)
                 .add(ModBlocks.CONVERTER_BLOCK);
 
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+        valueLookupBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.HEARTWOOD_BLOCK)
                 .add(ModBlocks.HEARTWOOD_STAIRS)
                 .add(ModBlocks.HEARTWOOD_SLAB)
@@ -35,25 +35,24 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.HEARTWOOD_FENCE_GATE)
                 .add(ModBlocks.HEARTWOOD_WALL);
 
-        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+        valueLookupBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.MYSTITE_BLOCK);
 
-        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+        valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.VERDANITE_ORE)
                 .add(ModBlocks.DEEPSLATE_VERDANITE_ORE);
 
-        getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS).add(ModBlocks.HEARTWOOD_STAIRS);
-        getOrCreateTagBuilder(BlockTags.WOODEN_SLABS).add(ModBlocks.HEARTWOOD_SLAB);
-        getOrCreateTagBuilder(BlockTags.WOODEN_BUTTONS).add(ModBlocks.HEARTWOOD_BUTTON);
-        getOrCreateTagBuilder(BlockTags.WOODEN_PRESSURE_PLATES).add(ModBlocks.HEARTWOOD_PRESSURE_PLATE);
-        getOrCreateTagBuilder(BlockTags.WOODEN_DOORS).add(ModBlocks.HEARTWOOD_DOOR);
-        getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS).add(ModBlocks.HEARTWOOD_TRAPDOOR);
-        getOrCreateTagBuilder(BlockTags.WOODEN_FENCES).add(ModBlocks.HEARTWOOD_FENCE);
-        getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(ModBlocks.HEARTWOOD_FENCE_GATE);
-        getOrCreateTagBuilder(BlockTags.WALLS).add(ModBlocks.HEARTWOOD_WALL);
+        valueLookupBuilder(BlockTags.WOODEN_STAIRS).add(ModBlocks.HEARTWOOD_STAIRS);
+        valueLookupBuilder(BlockTags.WOODEN_SLABS).add(ModBlocks.HEARTWOOD_SLAB);
+        valueLookupBuilder(BlockTags.WOODEN_BUTTONS).add(ModBlocks.HEARTWOOD_BUTTON);
+        valueLookupBuilder(BlockTags.WOODEN_PRESSURE_PLATES).add(ModBlocks.HEARTWOOD_PRESSURE_PLATE);
+        valueLookupBuilder(BlockTags.WOODEN_DOORS).add(ModBlocks.HEARTWOOD_DOOR);
+        valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS).add(ModBlocks.HEARTWOOD_TRAPDOOR);
+        valueLookupBuilder(BlockTags.WOODEN_FENCES).add(ModBlocks.HEARTWOOD_FENCE);
+        valueLookupBuilder(BlockTags.FENCE_GATES).add(ModBlocks.HEARTWOOD_FENCE_GATE);
+        valueLookupBuilder(BlockTags.WALLS).add(ModBlocks.HEARTWOOD_WALL);
 
-        getOrCreateTagBuilder(ModTags.Blocks.NEEDS_VERDANITE_TOOL).forceAddTag(BlockTags.NEEDS_DIAMOND_TOOL);
-
-        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN).add(ModBlocks.HEARTWOOD_BLOCK);
+        valueLookupBuilder(ModTags.Blocks.NEEDS_VERDANITE_TOOL).forceAddTag(BlockTags.NEEDS_DIAMOND_TOOL);
+        valueLookupBuilder(BlockTags.LOGS_THAT_BURN).add(ModBlocks.HEARTWOOD_BLOCK);
     }
 }

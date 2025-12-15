@@ -3,7 +3,8 @@ package com.aaryankh.blocksmith.item.custom;
 import com.aaryankh.blocksmith.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,8 +18,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 
-import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class ChiselItem extends Item {
     public static final Map<Block, Block> CHISEL_MAP = Map.of(
@@ -48,8 +49,9 @@ public class ChiselItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(Screen.hasShiftDown()) tooltip.add(Text.translatable("tooltip.blocksmith.chisel.shift_down"));
-        else tooltip.add(Text.translatable("tooltip.blocksmith.chisel"));
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+        if(MinecraftClient.getInstance().isShiftPressed()) textConsumer.accept(Text.translatable("tooltip.blocksmith.chisel.shift_down"));
+        else textConsumer.accept(Text.translatable("tooltip.blocksmith.chisel"));
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 }

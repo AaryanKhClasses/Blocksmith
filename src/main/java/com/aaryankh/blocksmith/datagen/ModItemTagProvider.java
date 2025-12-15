@@ -17,19 +17,22 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.Items.MYSTITE_CONVERTIBLE)
+        valueLookupBuilder(ModTags.Items.MYSTITE_CONVERTIBLE)
                 .add(Items.ANCIENT_DEBRIS)
                 .add(Items.NETHERITE_SCRAP);
 
-        getOrCreateTagBuilder(ModTags.Items.LIGHTNING_ENCHANTABLE).add(ModItems.MYSTITE_HAMMER);
+        valueLookupBuilder(ModTags.Items.MYSTITE_REPAIR)
+                .add(ModItems.MYSTITE_COAL);
 
-        getOrCreateTagBuilder(ItemTags.SWORDS).add(ModItems.VERDANITE_SWORD);
-        getOrCreateTagBuilder(ItemTags.PICKAXES).add(ModItems.VERDANITE_PICKAXE);
-        getOrCreateTagBuilder(ItemTags.AXES).add(ModItems.VERDANITE_AXE);
-        getOrCreateTagBuilder(ItemTags.SHOVELS).add(ModItems.VERDANITE_SHOVEL);
-        getOrCreateTagBuilder(ItemTags.HOES).add(ModItems.VERDANITE_HOE);
+        valueLookupBuilder(ModTags.Items.LIGHTNING_ENCHANTABLE).add(ModItems.MYSTITE_HAMMER);
 
-        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+        valueLookupBuilder(ItemTags.SWORDS).add(ModItems.VERDANITE_SWORD);
+        valueLookupBuilder(ItemTags.PICKAXES).add(ModItems.VERDANITE_PICKAXE);
+        valueLookupBuilder(ItemTags.AXES).add(ModItems.VERDANITE_AXE);
+        valueLookupBuilder(ItemTags.SHOVELS).add(ModItems.VERDANITE_SHOVEL);
+        valueLookupBuilder(ItemTags.HOES).add(ModItems.VERDANITE_HOE);
+
+        valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.MYSTITE_HELMET)
                 .add(ModItems.MYSTITE_CHESTPLATE)
                 .add(ModItems.MYSTITE_LEGGINGS)

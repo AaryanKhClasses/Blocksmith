@@ -18,6 +18,7 @@ public class ModTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> MYSTITE_REPAIR = createTag("mystite_repair");
         public static final TagKey<Item> MYSTITE_CONVERTIBLE = createTag("mystite_convertible");
         public static final TagKey<Item> LIGHTNING_ENCHANTABLE = createTag("lightning_enchantable");
 

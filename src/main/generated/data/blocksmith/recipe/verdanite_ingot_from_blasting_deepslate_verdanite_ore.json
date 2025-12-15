@@ -4,9 +4,7 @@
   "cookingtime": 100,
   "experience": 0.25,
   "group": "verdanite_ingot",
-  "ingredient": {
-    "item": "blocksmith:deepslate_verdanite_ore"
-  },
+  "ingredient": "blocksmith:deepslate_verdanite_ore",
   "result": {
     "id": "blocksmith:verdanite_ingot"
   }

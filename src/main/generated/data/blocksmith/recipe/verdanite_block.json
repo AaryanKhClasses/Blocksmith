@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "blocksmith:verdanite_ingot"
-    }
+    "#": "blocksmith:verdanite_ingot"
   },
   "pattern": [
     "###",

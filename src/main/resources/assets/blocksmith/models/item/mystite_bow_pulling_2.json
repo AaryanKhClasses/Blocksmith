@@ -1,6 +1,0 @@
-{
-  "parent": "blocksmith:item/mystite_bow",
-  "textures": {
-    "layer0": "blocksmith:item/mystite_bow_pulling_2"
-  }
-}

@@ -2,45 +2,48 @@ package com.aaryankh.blocksmith.item.custom;
 
 import com.aaryankh.blocksmith.item.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.EquippableComponent;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.world.World;
+import net.minecraft.item.equipment.ArmorMaterial;
+import net.minecraft.server.world.ServerWorld;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
 
-public class ModArmorItem extends ArmorItem {
-    private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
+public class ModArmorItem extends Item {
+    private static final Map<ArmorMaterial, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
+            (new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>())
                     .put(ModArmorMaterials.MYSTITE_ARMOR_MATERIAL, List.of(
                             new StatusEffectInstance(StatusEffects.HEALTH_BOOST, -1, 1, false, false),
                             new StatusEffectInstance(StatusEffects.RESISTANCE, -1, 0, false, false)
                     )).build();
 
-    public ModArmorItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
-        super(material, type, settings);
+    public ModArmorItem(Settings settings) {
+        super(settings);
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+    public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
         if(!world.isClient()) {
             if(entity instanceof PlayerEntity player) {
                 if(hasFullSetOfArmorOn(player)) evaluateArmorEffects(player);
                 else removeArmorEffects(player);
             }
         }
-        super.inventoryTick(stack, world, entity, slot, selected);
+        super.inventoryTick(stack, world, entity, slot);
     }
 
     private void evaluateArmorEffects(PlayerEntity player) {
-        for(Map.Entry<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
-            RegistryEntry<ArmorMaterial> armorMaterial = entry.getKey();
+        for(Map.Entry<ArmorMaterial, List<StatusEffectInstance>> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
+            ArmorMaterial armorMaterial = entry.getKey();
             List<StatusEffectInstance> effects = entry.getValue();
             if(hasCorrectArmorOn(armorMaterial, player)) addStatusEffectForMaterial(player, armorMaterial, effects);
             else removeStatusEffectForMaterial(player, effects);
@@ -48,7 +51,7 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private void removeArmorEffects(PlayerEntity player) {
-        for(Map.Entry<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
+        for(Map.Entry<ArmorMaterial, List<StatusEffectInstance>> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             List<StatusEffectInstance> effects = entry.getValue();
             removeStatusEffectForMaterial(player, effects);
         }
@@ -58,7 +61,7 @@ public class ModArmorItem extends ArmorItem {
         for(StatusEffectInstance instance : effects) player.removeStatusEffect(instance.getEffectType());
     }
 
-    private void addStatusEffectForMaterial(PlayerEntity player, RegistryEntry<ArmorMaterial> material, List<StatusEffectInstance> effects) {
+    private void addStatusEffectForMaterial(PlayerEntity player, ArmorMaterial material, List<StatusEffectInstance> effects) {
         boolean hasEffect = effects.stream().allMatch(statusEffectInstance -> player.hasStatusEffect(statusEffectInstance.getEffectType()));
         if(!hasEffect) {
             for(StatusEffectInstance instance : effects) {
@@ -68,24 +71,25 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private boolean hasFullSetOfArmorOn(PlayerEntity player) {
-        ItemStack boots = player.getInventory().getArmorStack(0);
-        ItemStack leggings = player.getInventory().getArmorStack(1);
-        ItemStack chestplate = player.getInventory().getArmorStack(2);
-        ItemStack helmet = player.getInventory().getArmorStack(3);
+        ItemStack boots = player.getInventory().getStack(EquipmentSlot.FEET.getIndex());
+        ItemStack leggings = player.getInventory().getStack(EquipmentSlot.LEGS.getIndex());
+        ItemStack chestplate = player.getInventory().getStack(EquipmentSlot.CHEST.getIndex());
+        ItemStack helmet = player.getInventory().getStack(EquipmentSlot.HEAD.getIndex());
 
         return !helmet.isEmpty() && !chestplate.isEmpty() && !leggings.isEmpty() && !boots.isEmpty();
     }
 
-    private boolean hasCorrectArmorOn(RegistryEntry<ArmorMaterial> material, PlayerEntity player) {
-        for(ItemStack armorStack : player.getInventory().armor) {
-            if(!(armorStack.getItem() instanceof ArmorItem)) return false;
-        }
+    private boolean hasCorrectArmorOn(ArmorMaterial material, PlayerEntity player) {
+        ItemStack boots = player.getInventory().getStack(EquipmentSlot.FEET.getIndex());
+        ItemStack leggings = player.getInventory().getStack(EquipmentSlot.LEGS.getIndex());
+        ItemStack chestplate = player.getInventory().getStack(EquipmentSlot.CHEST.getIndex());
+        ItemStack helmet = player.getInventory().getStack(EquipmentSlot.HEAD.getIndex());
 
-        ArmorItem boots = ((ArmorItem) player.getInventory().getArmorStack(0).getItem());
-        ArmorItem leggings = ((ArmorItem) player.getInventory().getArmorStack(1).getItem());
-        ArmorItem chestplate = ((ArmorItem) player.getInventory().getArmorStack(2).getItem());
-        ArmorItem helmet = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
+        EquippableComponent equippableComponentBoots = boots.getComponents().get(DataComponentTypes.EQUIPPABLE);
+        EquippableComponent equippableComponentLeggings = leggings.getComponents().get(DataComponentTypes.EQUIPPABLE);
+        EquippableComponent equippableComponentChestplate = chestplate.getComponents().get(DataComponentTypes.EQUIPPABLE);
+        EquippableComponent equippableComponentHelmet = helmet.getComponents().get(DataComponentTypes.EQUIPPABLE);
 
-        return helmet.getMaterial() == material && chestplate.getMaterial() == material && leggings.getMaterial() == material && boots.getMaterial() == material;
+        return equippableComponentBoots.assetId().get().equals(material.assetId()) && equippableComponentLeggings.assetId().get().equals(material.assetId()) && equippableComponentChestplate.assetId().get().equals(material.assetId()) && equippableComponentHelmet.assetId().get().equals(material.assetId());
     }
 }
